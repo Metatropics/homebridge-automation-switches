@@ -15,8 +15,7 @@ class AlarmClockAccessory {
     this.name = config.name;
     this._config = config;
 
-    this._alarmValue = Characteristic.ContactSensorState.CONTACT_NOT_DETECT
-    
+    this._alarmValue = Characteristic.ContactSensorState.CONTACT_NOT_DETECTED;
     this._noAlarmValue = Characteristic.ContactSensorState.CONTACT_DETECTED;
 
     process.env.TZ = process.env.TZ ?? config.TZ ;
