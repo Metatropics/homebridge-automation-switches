@@ -15,9 +15,11 @@ class AlarmClockAccessory {
     this.name = config.name;
     this._config = config;
 
-    this._alarmValue = Characteristic.ContactSensorState.CONTACT_NOT_DETECTED;
+    this._alarmValue = Characteristic.ContactSensorState.CONTACT_NOT_DETECT
+    
     this._noAlarmValue = Characteristic.ContactSensorState.CONTACT_DETECTED;
 
+    process.env.TZ = process.env.TZ ?? config.TZ ;
     this.log(`Timezone is ${process.env.TZ}`);
     this.log(`Local time is ${new Date().toLocaleString()}`);
     this.log(`UTC time is ${new Date().toUTCString()}`);
